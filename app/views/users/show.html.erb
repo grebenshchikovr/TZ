@@ -8,7 +8,11 @@
 
   			<% @user.messages.each do |message| %>
 	<p>
-	<%= message.sender_id %>	
+	<%= User.find(message.sender_id).nickname %> 
+	написал для 	
+	<%= User.find(message.receiver_id).nickname %>
+	</p>
+	<p>
 	<%= message.message %>	
 	</p>
 <% end %>
