@@ -1,0 +1,29 @@
+
+
+
+<h3 class="panel-title"><%= @user.nickname %></h3>
+  			---------
+			
+<h3 class="panel-title">Сообщения пользователя</h3>
+
+  			<% @user.messages.each do |message| %>
+	<p>
+	<%= link_to "#{message.message}".html_safe,message.message %>	
+	</p>
+<% end %>
+			
+		
+<h3 class="panel-title">Новое сообщение</h3>
+  		
+
+  	<%= form_for([@user, @user.messages.build]) do |f| %>
+	<p>
+		<%= f.label :message %><br />
+		<%= f.text_field :message %>
+	</p>
+
+	
+	<p>
+		<%= f.submit %>
+	</p>
+	<% end %>

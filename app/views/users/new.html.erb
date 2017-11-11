@@ -1,0 +1,15 @@
+<h1><%= t('users.user_new') %></h1>
+
+<%= form_for :user, url: users_path do |f| %>
+  <p>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </p>
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+

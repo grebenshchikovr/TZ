@@ -13,12 +13,13 @@
 ActiveRecord::Schema.define(version: 20171111185118) do
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "reciver_id"
     t.text     "message"
     t.boolean  "read"
+    t.integer  "sender_id"
+    t.integer  "reciver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["sender_id", "reciver_id"], name: "index_messages_on_sender_id_and_reciver_id"
   end
 
   create_table "users", force: :cascade do |t|

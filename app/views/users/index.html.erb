@@ -1,0 +1,19 @@
+
+
+	<% @users.each do |user| %>
+
+  
+          <%= user.nickname %>
+          <p>------</p>
+        
+        
+		<% user.messages.each do |message| %>
+		<%= message.message %>	
+		<% end %>
+
+      
+<% end %>
+
+</div>
+<%= link_to 'New User', new_user_path %>
+</div>
