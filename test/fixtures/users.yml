@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyText
+  last_online_at: 2017-11-11 21:48:16
+
+two:
+  nickname: MyText
+  last_online_at: 2017-11-11 21:48:16
