@@ -8,7 +8,8 @@
 
   			<% @user.messages.each do |message| %>
 	<p>
-	<%= link_to "#{message.message}".html_safe,message.message %>	
+	<%= message.sender_id %>	
+	<%= message.message %>	
 	</p>
 <% end %>
 			
@@ -17,9 +18,22 @@
   		
 
   	<%= form_for([@user, @user.messages.build]) do |f| %>
+	
+		<p>
+		<%= f.label :sender_id %><br />
+		<%= f.text_field :sender_id %>
+	</p>
 	<p>
 		<%= f.label :message %><br />
 		<%= f.text_field :message %>
+	</p>
+	<p>
+		<%= f.label :receiver_id %><br />
+		<%= f.text_field :receiver_id %>
+	</p>
+	<p>
+		<%= f.label :read %><br />
+		<%= f.text_field :read %>
 	</p>
 
 	
