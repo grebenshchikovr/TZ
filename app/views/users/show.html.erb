@@ -1,20 +1,19 @@
 
 
-
-<h3 class="panel-title"><%= @user.nickname %></h3>
-  			---------
 			
-<h3 class="panel-title">Сообщения пользователя</h3>
-
+<h3>Сообщения пользователя <%= @user.nickname %></h3>
+<hr>
   			<% @user.messages.each do |message| %>
 	<p>
 	<%= User.find(message.sender_id).nickname %> 
 	написал для 	
 	<%= User.find(message.receiver_id).nickname %>
+	в <%= message.created_at %>
 	</p>
 	<p>
 	<%= message.message %>	
 	</p>
+	<hr>
 <% end %>
 
 		
@@ -24,16 +23,16 @@
   	<%= form_for([@user, @user.messages.build]) do |f| %>
 	
 		
-		
-	</p>
+	<p>	<%= f.label :receiver_id %><br>
+		<%= f.collection_select :receiver_id, User.all, :id, :nickname %>
+				
+	</p>	
+	
 	<p>
 		<%= f.label :message %><br />
 		<%= f.text_field :message %>
 	</p>
-	<p>	<%= f.label :receiver_id %>
-		<%= f.collection_select :receiver_id, @users, :id, :nickname %>
-				
-	</p>
+	
 
 	<p>
 		<%= f.label :read %><br />
