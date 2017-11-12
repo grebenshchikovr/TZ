@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  before_filter only: [:new, :create]
 
   def index
-    @users = User.all
+    @users = User.all.order("last_online_at DESC, updated_at DESC")
   end
 
   def show
