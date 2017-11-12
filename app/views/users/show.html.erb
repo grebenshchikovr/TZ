@@ -16,7 +16,7 @@
 	<%= message.message %>	
 	</p>
 <% end %>
-			
+
 		
 <h3 class="panel-title">Новое сообщение</h3>
   		
@@ -30,10 +30,11 @@
 		<%= f.label :message %><br />
 		<%= f.text_field :message %>
 	</p>
-	<p>
-		<%= f.label :receiver_id %><br />
-		<%= f.text_field :receiver_id %>
+	<p>	<%= f.label :receiver_id %>
+		<%= f.collection_select :receiver_id, @users, :id, :nickname %>
+				
 	</p>
+
 	<p>
 		<%= f.label :read %><br />
 		<%= f.text_field :read %>
