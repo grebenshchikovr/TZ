@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Веб-приложение, структура БД согласно https://gist.github.com/drakmail/416f79f623992666b48bbb165ec35e59
+Создание пользователей, отправка сообщений от пользователя к пользователю, просмотр списка сообщений пользователя.
